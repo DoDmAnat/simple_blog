@@ -1,1 +1,1 @@
-# simple_blog
+# Simple_blog
