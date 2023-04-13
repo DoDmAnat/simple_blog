@@ -14,10 +14,15 @@
       </div>
       <div class="mt-12 max-w-lg mx-auto grid gap-5 lg:grid-cols-3 lg:max-w-none">
         <div v-for="posts in APIData" :key="posts.id" class="flex flex-col rounded-lg shadow-lg overflow-hidden">
-        <router-link :to="{ name: 'BlogPost', params: { id: posts.id, author: posts.author}}">
-        <p>{{ posts.author }}</p>
+        <router-link :to="{ name: 'BlogPost', params: { id: posts.id, title: posts.title, thumbnail: posts.thumbnail, slug: posts.slug, excerpt: posts.excerpt, content: posts.content}}">
+          <h3 class="mt-3 text-lg font-semibold leading-6 text-gray-900 group-hover:text-gray-600">
+              <a :href="post.href">
+                <span class="absolute inset-0" />
+                {{ posts.title }}
+              </a>
+            </h3>
         </router-link>
-        {{ posts.author }}
+        {{ posts.content }}
         </div>
       </div>
     </div>
@@ -37,7 +42,7 @@ export default {
     }
   },
   created () {
-        getAPI.get('/api/posts/',)
+        getAPI.get('/blog/posts/',)
           .then(response => {
             console.log('Post API has recieved data')
             this.APIData = response.data
