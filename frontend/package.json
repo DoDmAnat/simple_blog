@@ -7,7 +7,10 @@
     "build": "vue-cli-service build"
   },
   "dependencies": {
+    "@popperjs/core": "^2.11.7",
     "autoprefixer": "^10",
+    "bootstrap": "^5.2.3",
+    "bootstrap-vue": "^2.23.1",
     "core-js": "^3.8.3",
     "postcss": "^8",
     "tailwindcss": "^3",
